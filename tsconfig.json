@@ -2,12 +2,14 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "commonjs",
     "target": "es2017",
     "baseUrl": "./src",
+    "declaration": true,
+    "outDir": "./lib",
     "strict": true,
     "moduleResolution": "node"
   },
-  "include": ["**/*.ts", "index.d.ts"],
+  "include": ["src/index.ts"],
   "exclude": ["node_modules", "**/__test__/*"]
 }

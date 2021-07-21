@@ -1,7 +1,7 @@
 {
   "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "Format time and date to show how long it has been since data was created. Ex. `2 minutes ago` or `3 months ago`",
   "main": "index.js",
   "repository": "git+https://github.com/Dchole/format-time.git",
   "author": "dchole",
@@ -12,11 +12,15 @@
   "homepage": "https://github.com/Dchole/format-time#reamde",
   "scripts": {
     "start": "node src/index.js",
-    "build": "tsc"
+    "build": "tsc && uglifyjs lib/index.js -o lib/index.js"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "eslint": "^7.31.0",
     "jest": "^27.0.6",
-    "jsmin": "^1.0.1",
-    "typescript": "^4.3.5"
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5",
+    "uglify-js": "^3.13.10"
   }
 }
