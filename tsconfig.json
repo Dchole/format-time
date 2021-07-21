@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "commonjs",
+    "module": "es6",
     "target": "es2017",
     "baseUrl": "./src",
     "declaration": true,
