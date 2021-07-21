@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "jest --config jest.config.json",
-    "build": "tsc && uglifyjs lib/index.js -o lib/index.js",
+    "build": "tsc && uglifyjs lib/index.js -m --mangle-props -o lib/index.js",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "version": "git add -A",
