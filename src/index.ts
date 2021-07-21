@@ -1,4 +1,4 @@
-const formatTime = (time: string | number | Date): string => {
+export const formatTime = (time: string | number | Date): string => {
   const time_posted =
     typeof time === "number" ? time : Date.parse(time as string)
   const now = Date.now()
@@ -45,5 +45,3 @@ const formatTime = (time: string | number | Date): string => {
     return "A long time ago"
   }
 }
-
-export default formatTime
