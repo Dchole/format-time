@@ -1,7 +1,13 @@
-export const formatTime = (time: string | number | Date): string => {
+const formatTime = (time: string | number | Date): string => {
   const time_posted =
     typeof time === "number" ? time : Date.parse(time as string)
   const now = Date.now()
+
+  if (isNaN(time_posted)) {
+    throw new TypeError(
+      `Expected DateTime but got ${time} instead.\nEx. timeAge(new Date()) or timeAge(Date.now())`
+    )
+  }
 
   const timeRange = now - time_posted
 
@@ -39,3 +45,5 @@ export const formatTime = (time: string | number | Date): string => {
     return "A long time ago"
   }
 }
+
+export default formatTime
