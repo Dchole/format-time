@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/Dchole/format-time/issues"
   },
-  "homepage": "https://github.com/Dchole/format-time#reamde",
+  "homepage": "https://github.com/Dchole/format-time#readme",
   "scripts": {
     "start": "node src/index.js",
     "test": "jest --config jest.config.json",
