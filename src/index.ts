@@ -1,4 +1,4 @@
-export const formatTime = (time: string | number | Date): string => {
+const timeAge = (time: string | number | Date): string => {
   const time_posted =
     typeof time === "number" ? time : Date.parse(time as string)
   const now = Date.now()
@@ -45,3 +45,5 @@ export const formatTime = (time: string | number | Date): string => {
     return "A long time ago"
   }
 }
+
+export default timeAge
