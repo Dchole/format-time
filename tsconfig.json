@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es2017",
+    "baseUrl": "./src",
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "include": ["**/*.ts", "index.d.ts"],
+  "exclude": ["node_modules", "**/__test__/*"]
+}
