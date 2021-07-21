@@ -1,0 +1,9 @@
+{
+  "name": "format-time",
+  "version": "1.0.0",
+  "description": "Format time and date to show how long it has been since data was created",
+  "main": "index.js",
+  "repository": "https://github.com/Dchole/format-time.git",
+  "author": "dchole",
+  "license": "MIT"
+}
