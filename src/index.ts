@@ -1,5 +1,6 @@
-export const formatTime = (time: string | number): string => {
-  const time_posted = typeof time === "number" ? time : Date.parse(time)
+export const formatTime = (time: string | number | Date): string => {
+  const time_posted =
+    typeof time === "number" ? time : Date.parse(time as string)
   const now = Date.now()
 
   const timeRange = now - time_posted

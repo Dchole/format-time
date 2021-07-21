@@ -1,10 +1,13 @@
 {
   "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "Format time and date to show how long it has been since data was created. Ex. `2 minutes ago` or `3 months ago`",
-  "main": "index.js",
-  "repository": "git+https://github.com/Dchole/format-time.git",
-  "author": "dchole",
+  "description": "Format time and date to show how long it has been since data was created. Ex. `2 minutes ago` or `3 months ago`.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dchole/format-time.git"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Dchole/format-time/issues"
@@ -12,15 +15,36 @@
   "homepage": "https://github.com/Dchole/format-time#reamde",
   "scripts": {
     "start": "node src/index.js",
-    "build": "tsc && uglifyjs lib/index.js -o lib/index.js"
+    "test": "jest --config jest.config.json",
+    "build": "tsc && uglifyjs lib/index.js -o lib/index.js",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "devDependencies": {
+    "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "eslint": "^7.31.0",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.0.3",
     "typescript": "^4.3.5",
     "uglify-js": "^3.13.10"
+  },
+  "keywords": [
+    "date",
+    "time",
+    "date formatter",
+    "format time"
+  ],
+  "author": {
+    "name": "Derek Oware",
+    "email": "derekoware47@gmail.com",
+    "url": "https://oware.me"
   }
 }
