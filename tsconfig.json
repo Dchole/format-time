@@ -2,8 +2,8 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es2017",
+    "module": "commonjs",
+    "target": "es6",
     "baseUrl": "./src",
     "declaration": true,
     "outDir": "./lib",
