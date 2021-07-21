@@ -1,6 +1,6 @@
 {
   "name": "time-age",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Format time and date to show how long it has been since data was created. Ex. `2 minutes ago` or `3 months ago`.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
