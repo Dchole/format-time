@@ -42,7 +42,7 @@ const timeAge = (time: string | number | Date): string => {
     return `${Math.round(seconds)} seconds ago`
   } else if (timeRange < 1000) return "Just now"
   else {
-    return "A long time ago"
+    return new Date(time).toDateString()
   }
 }
 
