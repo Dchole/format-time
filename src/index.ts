@@ -29,7 +29,7 @@ const timeAge = (time: string | number | Date): string => {
     if (weeks < 2) return "About a week ago"
     return `About ${Math.round(weeks)} weeks ago`
   } else if (days >= 1) {
-    if (days < 2) return "A day ago"
+    if (days < 2) return "Yesterday"
     return `${Math.round(days)} days ago`
   } else if (hours >= 1) {
     if (hours < 2) return "An hour ago"
