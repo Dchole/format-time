@@ -1,49 +1,68 @@
-const timeAge = (time: string | number | Date): string => {
+const timeAge = (
+  time: string | number | Date,
+  options: { showSeconds?: boolean }
+): string => {
   const time_posted =
-    typeof time === "number" ? time : Date.parse(time as string)
-  const now = Date.now()
+    typeof time === "number" ? time : Date.parse(time as string);
+  const now = Date.now();
 
   if (isNaN(time_posted)) {
     throw new TypeError(
       `Expected DateTime but got ${time} instead.\nEx. timeAge(new Date()) or timeAge(Date.now())`
-    )
+    );
   }
 
-  const timeRange = now - time_posted
+  const timeRange = now - time_posted;
 
-  const seconds = timeRange / 1000
-  const minutes = seconds / 60
-  const hours = minutes / 60
-  const days = hours / 24
-  const weeks = days / 7
-  const months = weeks / 4
-  const years = months / 12
+  const seconds = timeRange / 1000;
+  const minutes = seconds / 60;
+  const hours = minutes / 60;
+  const days = hours / 24;
+  const weeks = days / 7;
+  const months = weeks / 4;
+  const years = months / 12;
 
   if (years >= 1) {
-    if (years < 2) return "About a year ago"
-    return `About ${Math.round(years)} years ago`
-  } else if (months >= 1) {
-    if (months < 2) return "About a month ago"
-    return `About ${Math.round(months)} months ago`
-  } else if (weeks >= 1) {
-    if (weeks < 2) return "About a week ago"
-    return `About ${Math.round(weeks)} weeks ago`
-  } else if (days >= 1) {
-    if (days < 2) return "Yesterday"
-    return `${Math.round(days)} days ago`
-  } else if (hours >= 1) {
-    if (hours < 2) return "An hour ago"
-    return `${Math.round(hours)} hours ago`
-  } else if (minutes >= 1) {
-    if (minutes < 2) return "A minute ago"
-    return `${Math.round(minutes)} minutes ago`
-  } else if (seconds >= 1) {
-    if (seconds < 2) return "A second ago"
-    return `${Math.round(seconds)} seconds ago`
-  } else if (timeRange < 1000) return "Just now"
-  else {
-    return new Date(time).toDateString()
+    if (years < 2) return "About a year ago";
+    return `About ${Math.round(years)} years ago`;
   }
-}
 
-export default timeAge
+  if (months >= 1) {
+    if (months < 2) return "About a month ago";
+    return `About ${Math.round(months)} months ago`;
+  }
+
+  if (weeks >= 1) {
+    if (weeks < 2) return "About a week ago";
+    return `About ${Math.round(weeks)} weeks ago`;
+  }
+
+  if (days >= 1) {
+    if (days < 2) return "Yesterday";
+    return `${Math.round(days)} days ago`;
+  }
+
+  if (hours >= 1) {
+    if (hours < 2) return "An hour ago";
+    return `${Math.round(hours)} hours ago`;
+  }
+
+  if (minutes >= 1) {
+    if (minutes < 2) return "A minute ago";
+    return `${Math.round(minutes)} minutes ago`;
+  }
+
+  if (seconds >= 1) {
+    if (seconds < 2) return "A second ago";
+    return `${Math.round(seconds)} seconds ago`;
+  }
+
+  if (timeRange < 1000) {
+    if (options.showSeconds) return `${seconds} seconds ago`;
+    return "Just now";
+  }
+
+  return new Date(time).toDateString();
+};
+
+export default timeAge;
